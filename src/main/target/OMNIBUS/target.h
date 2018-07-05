@@ -23,11 +23,11 @@
 #undef USE_DSHOT_DMAR           // OMNIBUS (F3) does not benefit from burst Dshot
 
 // Removed to make the firmware fit into flash (in descending order of priority):
-#undef USE_GYRO_OVERFLOW_CHECK
-#undef USE_GYRO_LPF2
+//#undef USE_GYRO_OVERFLOW_CHECK
+//#undef USE_GYRO_LPF2
 
-#undef USE_ITERM_RELAX
-#undef USE_RC_SMOOTHING_FILTER
+//#undef USE_ITERM_RELAX
+//#undef USE_RC_SMOOTHING_FILTER
 
 #undef USE_TELEMETRY_HOTT
 #undef USE_TELEMETRY_MAVLINK
@@ -61,16 +61,16 @@
 #define USE_GYRO_SPI_MPU6000
 #define GYRO_MPU6000_ALIGN      CW90_DEG
 
-#define USE_ACC
-#define USE_ACC_SPI_MPU6000
-#define ACC_MPU6000_ALIGN       CW90_DEG
+//#define USE_ACC
+//#define USE_ACC_SPI_MPU6000
+//#define ACC_MPU6000_ALIGN       CW90_DEG
 
-#define BMP280_SPI_INSTANCE     SPI1
-#define BMP280_CS_PIN           PA13
+//#define BMP280_SPI_INSTANCE     SPI1
+//#define BMP280_CS_PIN           PA13
 
-#define USE_BARO
-#define USE_BARO_BMP280
-#define USE_BARO_SPI_BMP280
+//#define USE_BARO
+//#define USE_BARO_BMP280
+//#define USE_BARO_SPI_BMP280
 
 //#define USE_RANGEFINDER
 //#define USE_RANGEFINDER_HCSR04
@@ -135,22 +135,21 @@
 #define SPI2_MISO_PIN           PB14
 #define SPI2_MOSI_PIN           PB15
 
-#define USE_SDCARD
+//#define USE_SDCARD
 
-#define SDCARD_DETECT_INVERTED
-#define SDCARD_DETECT_PIN                   PC14
-
-#define SDCARD_SPI_INSTANCE                 SPI2
-#define SDCARD_SPI_CS_PIN                   SPI2_NSS_PIN
+//#define SDCARD_DETECT_INVERTED
+//#define SDCARD_DETECT_PIN                   PC14
+//#define SDCARD_SPI_INSTANCE                 SPI2
+//#define SDCARD_SPI_CS_PIN                   SPI2_NSS_PIN
 
 // SPI2 is on the APB1 bus whose clock runs at 36MHz. Divide to under 400kHz for init:
-#define SDCARD_SPI_INITIALIZATION_CLOCK_DIVIDER 128
+//#define SDCARD_SPI_INITIALIZATION_CLOCK_DIVIDER 128
 // Divide to under 25MHz for normal operation:
-#define SDCARD_SPI_FULL_SPEED_CLOCK_DIVIDER     2
+//#define SDCARD_SPI_FULL_SPEED_CLOCK_DIVIDER     2
 
 // DSHOT output 4 uses DMA1_Channel5, so don't use it for the SDCARD until we find an alternative
 #ifndef USE_DSHOT
-#define SDCARD_DMA_CHANNEL_TX               DMA1_Channel5
+//#define SDCARD_DMA_CHANNEL_TX               DMA1_Channel5
 #endif
 
 // Performance logging for SD card operations:
@@ -166,12 +165,12 @@
 //#define RSSI_ADC_PIN                PB1
 //#define ADC_INSTANCE                ADC3
 
-#define USE_TRANSPONDER
-#define REDUCE_TRANSPONDER_CURRENT_DRAW_WHEN_USB_CABLE_PRESENT
+//#define USE_TRANSPONDER
+//#define REDUCE_TRANSPONDER_CURRENT_DRAW_WHEN_USB_CABLE_PRESENT
 
-#define ENABLE_BLACKBOX_LOGGING_ON_SDCARD_BY_DEFAULT
+//#define ENABLE_BLACKBOX_LOGGING_ON_SDCARD_BY_DEFAULT
 
-#define DEFAULT_RX_FEATURE      FEATURE_RX_PPM
+#define DEFAULT_RX_FEATURE      FEATURE_RX_SERIAL
 #define DEFAULT_FEATURES        (FEATURE_OSD)
 
 // Disable rarely used buttons in favor of flash space
